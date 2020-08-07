@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.searchDiv {
+  text-align: center;
+}
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Sora", sans-serif;
+  margin: 20px 0;
+}
+.username {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.searchBtn,
+.repos,
+.gists,
+.following,
+.followers,
+.userProfile {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  color: green;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.userProfile {
+  margin: 0 120px 30px;
+}
+
+.dataCatalog {
+  margin-top: 30px;
+  display: none;
+}
+.catalog {
+  display: block;
+}
+.profileDiv {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.userImage {
+  margin: 20px 0;
+  padding: 0 50px;
+}
+.catalogBtns {
+  display: flex;
+  justify-content: space-evenly;
+}
+.userData {
+  margin-top: 30px;
+  border: 1px solid black;
+}
+/*Desktop Styles*/
+
+@media only screen and (min-width: 960px) {
+  h1 {
+    font-size: 50px;
+  }
+  .username {
+    width: 300px;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  .searchBtn,
+  .repos,
+  .gists,
+  .following,
+  .followers,
+  .userProfile {
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  .searchBtn:hover,
+  .repos:hover,
+  .gists:hover,
+  .following:hover,
+  .followers:hover,
+  .userProfile:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .userImage {
+    margin: 20px 0;
+    padding: 0 650px;
+  }
+  .userProfile {
+    margin: 0 720px 30px;
+  }
+}

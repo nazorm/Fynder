@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git User Finder</title>
+    <link rel="stylesheet" href="./gitFinder.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="searchDiv">
+        <h1>Search Github Users</h1>
+        <input type="text" placeholder="Enter Username" class="username" />
+        <button class="searchBtn" onclick="getUserDetails()">Search</button>
+      </div>
+      <section class="dataCatalog">
+          <div class="catalog">
+              <div class="profileDiv">
+                <img src="http://placecorgi.com/260/180" class="userImage"/>
+                <button class="userProfile" onclick="getUserProfile()">Profile</button>
+                <!---<img src="http://placecorgi.com" width="300" height="300" alt="userImage" class="userImage" > --->  
+              </div>
+              <div class="catalogBtns">
+                <button class="repos" onclick="getUserRepo()">Public Repos</button>
+                <button class="gists" onclick="getUserGists()">Gists</button>
+                <button class="following" onclick="getUserFollowing()"> Following </button>
+                <button class="followers" onclick="getUserFollowers()"> Followers</button>
+              </div>
+              <div class="userData"><ul class="dataList"></ul></div>
+          </div>
+      </section>
+    </section>
+    <script src="./find.js"></script>
+  </body>
+</html>
