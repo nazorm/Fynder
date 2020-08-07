@@ -32,6 +32,10 @@ h1 {
   font-size: 15px;
   font-weight: 400;
 }
+.userP{
+  text-decoration: none;
+  color: green;
+}
 .userProfile {
   margin: 0 120px 30px;
 }
