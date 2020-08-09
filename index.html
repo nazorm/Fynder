@@ -17,20 +17,30 @@
         <input type="text" placeholder="Enter Username" class="username" />
         <button class="searchBtn" onclick="getUserDetails()">Search</button>
       </div>
+      <ul class="generalDataList">
+        
+      </ul>
       <section class="dataCatalog">
           <div class="catalog">
               <div class="profileDiv">
                 <img src="http://placecorgi.com/200" class="userImage"/>
+                <span class="name"></span>
                 <button class="userProfile"><a href="http://placecorgi.com" target="_blank" class="userP">Profile</a></button>
                 <!---<img src="http://placecorgi.com" width="300" height="300" alt="userImage" class="userImage" > --->  
               </div>
               <div class="catalogBtns">
-                <button class="repos" onclick="getUserRepo()">Public Repos</button>
-                <button class="gists" onclick="getUserGists()">Gists</button>
-                <button class="following" onclick="getUserFollowing()"> Following </button>
-                <button class="followers" onclick="getUserFollowers()"> Followers</button>
+                <button class="repos" >Public Repos</button>
+                <button class="gists" >Gists</button>
+                <button class="following" > Following </button>
+                <button class="followers" > Followers</button>
               </div>
-              <div class="userData"><ul class="dataList"></ul></div>
+              <div class="userData">
+                <ul class="specificdataList">
+                  <li class="company"></li>
+                  <li class="website"></li>
+                  <li class="location"></li>
+                  <li class="member"></li>
+              </ul></div>
           </div>
       </section>
     </section>
