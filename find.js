@@ -15,7 +15,7 @@ class Details {
       .then((data) => {
         this.items = data.items;
         this.handleEveryUserDisplay(this.items);
-        console.log(this.items);
+       // console.log(this.items);
       });
   }
 
@@ -40,57 +40,36 @@ class Details {
       .then((res) => res.json())
       .then((data) => {
         let userInfo = data;
-        this.changeRepo(userInfo);
-        this.changeGist(userInfo);
-        this.changeFollowing(userInfo);
-        this.changeFollowers(userInfo);
 
-
-
-           this.changeCompany(userInfo)
-           this.changeWebsite(userInfo)
-           this.changeLocation(userInfo)
-           this.changeMember(userInfo)
-
+        this.pasteUserInfo(userInfo);
 
         document.querySelector(".userImage").src = specificUser.avatar_url;
         document.querySelector(".name").innerHTML = username;
         document.querySelector(".userP").href = specificUser.html_url;
       });
   }
-  changeRepo(value) {
+  pasteUserInfo(value) {
     document.querySelector(
       ".repos"
     ).innerHTML = `Public Repos: ${value.public_repos} `;
-  }
-  changeGist(value) {
     document.querySelector(
       ".gists"
     ).innerHTML = `Gists: ${value.public_gists} `;
-  }
-  changeFollowing(value) {
     document.querySelector(
       ".following"
     ).innerHTML = `Following: ${value.following} `;
-  }
-  changeFollowers(value) {
     document.querySelector(
       ".followers"
     ).innerHTML = `Followers: ${value.followers} `;
+    document.querySelector(".company").innerHTML = `Company: ${value.company} `;
+    document.querySelector(".website").innerHTML = `Website: ${value.blog} `;
+    document.querySelector(
+      ".location"
+    ).innerHTML = `Location: ${value.location} `;
+    document.querySelector(
+      ".member"
+    ).innerHTML = `Member since: ${value.created_at} `;
   }
-
-     changeCompany(value){
-      document.querySelector(".company").innerHTML = `Company: ${value.company} `
-     }
-     changeWebsite(value){
-      document.querySelector(".website").innerHTML = `Website: ${value.blog} `
-     }
-     changeLocation(value){
-      document.querySelector(".location").innerHTML = `Location: ${value.location} `
-     }
-     changeMember(value){
-      document.querySelector(".member").innerHTML = `Member since: ${value.created_at} `
-     }
 }
 
 var details = new Details();

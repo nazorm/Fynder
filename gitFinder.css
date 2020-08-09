@@ -35,6 +35,10 @@ h1 {
 .generalDataList{
   text-align: center;
   margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 30px;
+  padding: 0 25px;
 }
 .generalDataList li{
   text-align: center;
@@ -46,9 +50,14 @@ h1 {
   font-size: 15px;
   font-weight: 400;
 }
-.generalDataList li img, .userImage {
+.generalDataList li img{
   border-radius: 50%;
   width: 100%;
+}
+.userImage{
+  border-radius: 50%;
+  width: 200px;
+  padding: 0 115px;
 }
 .userP{
   text-decoration: none;
@@ -78,9 +87,13 @@ h1 {
 .userData {
   margin-top: 30px;
 }
-.comapany, .website, .location, .member{
+.company, .website, .location, .member{
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
   margin: 15px 0;
   border: 1px solid black;
+  border-radius: 5px;
   padding: 10px 15px;
 }
 .userData li{
