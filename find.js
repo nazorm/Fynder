@@ -6,6 +6,7 @@ class Details {
     this.items = [];
   }
 
+
   fetchData() {
     var value = document.querySelector(".username");
     var userValue = value.value;
@@ -74,9 +75,16 @@ class Details {
 
 var details = new Details();
 
+// document.querySelector(".username").addEventListener("input", debounce(e =>{
+//   details.fetchData();
+// }, 3000))
+
+
+
+
 const getUserDetails = () => {
-  details.fetchData();
-};
+  details.fetchData()
+   };
 
 const handleSpecificUserClick = (index) => {
   var catalog = document.querySelector(".dataCatalog");
