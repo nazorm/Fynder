@@ -89,7 +89,7 @@ var details = new Details();
 
 
 const getUserDetails = () => {
-  details.debounce(details.fetchData(), 1000)
+  details.debounce(details.fetchData(), 3000)
   //details.fetchData()
    };
 
