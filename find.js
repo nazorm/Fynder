@@ -5,7 +5,15 @@ class Details {
   constructor() {
     this.items = [];
   }
-
+debounce(fn, delay){
+let timer;
+return function (){
+  setTimeout(timer)
+    timer = setTimeout(()=>{
+     fn()
+  }, delay)
+}
+}
 
   fetchData() {
     var value = document.querySelector(".username");
@@ -19,10 +27,8 @@ class Details {
        // console.log(this.items);
       });
   }
-
   handleEveryUserDisplay(items) {
     generalItemList.innerHTML = " ";
-    // console.log(items);
     for (let i = 0; i < items.length; i++) {
       var item = `<li>
         <img src='${items[i].avatar_url}' onclick="handleSpecificUserClick(${i})"/>
@@ -83,7 +89,8 @@ var details = new Details();
 
 
 const getUserDetails = () => {
-  details.fetchData()
+  details.debounce(details.fetchData(), 1000)
+  //details.fetchData()
    };
 
 const handleSpecificUserClick = (index) => {
