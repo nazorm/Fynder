@@ -1,5 +1,7 @@
 var generalItemList = document.querySelector(".generalDataList");
 var specificdataList = document.querySelector(".specificdataList");
+var userRepo = document.querySelector(".userRepo")
+var profileName = document.querySelector(".username")
 
 class Details {
   constructor() {
@@ -18,7 +20,7 @@ return function (){
   fetchData() {
     var value = document.querySelector(".username");
     var userValue = value.value;
-
+    
     fetch(`https://api.github.com/search/users?q=${userValue}`)
       .then((response) => response.json())
       .then((data) => {
@@ -28,12 +30,16 @@ return function (){
       });
   }
   handleEveryUserDisplay(items) {
+    if (profileName === " "){
+      generalItemList.innerHTML = " ";
+    }
     generalItemList.innerHTML = " ";
     for (let i = 0; i < items.length; i++) {
       var item = `<li>
         <img src='${items[i].avatar_url}' onclick="handleSpecificUserClick(${i})"/>
         <span>${items[i].login}</span>
         </li>`;
+
       generalItemList.innerHTML += item;
     }
   }
@@ -47,7 +53,9 @@ return function (){
       .then((res) => res.json())
       .then((data) => {
         let userInfo = data;
-
+     // console.log(userInfo)
+      
+         this.getUserRepo(userInfo)
         this.pasteUserInfo(userInfo);
 
         document.querySelector(".userImage").src = specificUser.avatar_url;
@@ -55,6 +63,32 @@ return function (){
         document.querySelector(".userP").href = specificUser.html_url;
       });
   }
+
+   getUserRepo(value){
+    
+    fetch(value.repos_url)
+    .then((res) => res.json())
+    .then((data) => {
+    let repos = data;
+    this.displayRepo(repos)
+    console.log(repos)
+    })
+  }
+
+  displayRepo(value){
+    for(let i = 0; i < value.length; i++){
+      var repo = `<li>
+      <span><a href= "${value[i].html_url}" target="_blank">${value[i].name}</a></span>
+      <span>${value[i].fork}</span>
+      <span>${value[i].forks}</span>
+      
+      </li>`
+      userRepo.innerHTML += repo
+    }
+    
+  
+  }
+  
   pasteUserInfo(value) {
     document.querySelector(
       ".repos"

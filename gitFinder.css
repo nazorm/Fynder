@@ -113,6 +113,13 @@ h1 {
 .userData li {
   list-style: none;
 }
+.userRepo li{
+  border: 1px solid black;
+  margin: 5% 0;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+}
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   .userImage {
     display: block;
