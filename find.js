@@ -7,18 +7,20 @@ var catalog = document.querySelector(".dataCatalog");
 class Details {
   constructor() {
     this.items = [];
+    this.client_id = "feb4d1a2bb239014cc3c";
+    this.client_secret = "d4dd84715469c159227bb369e10c1ef08cfbb704";
   }
 
   // debounce
-  debounce(fn, delay) {
-    let timer;
-    return function () {
-      setTimeout(timer);
-      timer = setTimeout(() => {
-        fn();
-      }, delay);
-    };
-  }
+  // debounce(fn, delay) {
+  //   let timer;
+  //   return function () {
+  //     setTimeout(timer);
+  //     timer = setTimeout(() => {
+  //       fn();
+  //     }, delay);
+  //   };
+  // }
 
   //fetch multiple users
   fetchData() {
@@ -40,11 +42,11 @@ class Details {
         <img src='${items[i].avatar_url}' onclick="handleSpecificUserClick(${i})"/>
         <span>${items[i].login}</span>
         </li>`;
-        catalog.style.display = "none";
+      catalog.style.display = "none";
       generalItemList.innerHTML += item;
     }
   }
-//display specific user details to screen
+  //display specific user details to screen
   handleSpecificUser(itemIndex) {
     generalItemList.innerHTML = " ";
     let specificUser = this.items[itemIndex];
@@ -63,7 +65,7 @@ class Details {
         document.querySelector(".userP").href = specificUser.html_url;
       });
   }
-//fetch user Repos
+  //fetch user Repos
   getUserRepo(value) {
     fetch(value.repos_url)
       .then((res) => res.json())
@@ -72,7 +74,7 @@ class Details {
         this.displayRepo(repos);
       });
   }
-// display user repos to screen
+  // display user repos to screen
   displayRepo(value) {
     for (let i = 0; i < value.length; i++) {
       var repo = `<li>
@@ -112,10 +114,9 @@ class Details {
 
 var details = new Details();
 
-
 const getUserDetails = () => {
-  details.debounce(details.fetchData(), 3000);
-  //details.fetchData()
+  // details.debounce(details.fetchData(), 3000);
+  details.fetchData()
 };
 
 const handleSpecificUserClick = (index) => {
