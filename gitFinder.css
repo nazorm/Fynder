@@ -117,6 +117,7 @@ h1 {
   border: 1px solid black;
   margin: 5% 0;
   padding: 20px 0;
+  font-family: "Sora", sans-serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
 }
