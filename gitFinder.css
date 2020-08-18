@@ -189,4 +189,8 @@ h1 {
     margin: 15px 80px;
     border-radius: 10px;
   }
+  .userRepo{
+    padding: 0 80px;
+    font-size: 20px;
+  }
 }
