@@ -61,13 +61,13 @@ h1 {
   width: 100%;
 }
 .userImage {
+  display: block;
+  margin: 0 auto;
   border-radius: 50%;
   width: 35%;
-
   padding: 0 115px;
 }
 .userP {
-  text-decoration: none;
   color: green;
 }
 .userProfile {
@@ -93,7 +93,7 @@ h1 {
   width: 100%;
   display: grid;
   grid-gap: 2%;
-  grid-template-columns: repeat(auto-fit, minmax(5%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(2%, 1fr));
 }
 .userData {
   margin-top: 30px;
@@ -102,25 +102,40 @@ h1 {
 .website,
 .location,
 .member{
+  text-align: start;
   font-family: "Sora", sans-serif;
   font-size: 15px;
   font-weight: 400;
   margin: 15px 0;
-  border: 1px solid black;
+  border: 1px solid wheat;
   border-radius: 5px;
   padding: 10px 15px;
 }
 .userData li {
   list-style: none;
 }
+a{
+  text-decoration: none;
+}
 .userRepo li {
-  border: 1px solid black;
-  margin: 5% 0;
+  border: 1px solid wheat;
+  margin: 10px 0;
   padding: 20px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1%, 1fr));
 }
-
+.userRepo li span:nth-child(1){
+  text-align: start;
+}
+.userRepo li span:nth-child(2){
+  background-color: orange;
+}
+.userRepo li span:nth-child(3){
+  background-color: teal;
+}
+.userRepo li span:nth-child(4){
+  background-color: lightblue;
+}
 .userRepo li span{
   font-family: "Sora", sans-serif;
 }
@@ -151,7 +166,7 @@ h1 {
   .following,
   .followers,
   .userProfile {
-    padding: 10px 15px;
+    padding: 10px 10px;
     font-size: 18px;
     border-radius: 10px;
   }
@@ -165,9 +180,11 @@ h1 {
     opacity: 0.5;
   }
   .userImage {
-    display: block;
-    margin: 0 auto;
     width: 20%;
+  }
+  .catalogBtns {
+    margin: 0 auto;
+    width: 50%;
   }
   .userProfile {
     margin: 0 auto 30px;
@@ -184,11 +201,8 @@ h1 {
   .website,
   .location,
   .member {
-    font-family: "Sora", sans-serif;
     font-size: 20px;
-    border: 1px solid black;
-    margin: 15px 80px;
-    border-radius: 10px;
+    margin: 15px 25%;
   }
   .userRepo{
     padding: 0 80px;

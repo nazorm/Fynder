@@ -11,16 +11,6 @@ class Details {
     this.client_secret = "d4dd84715469c159227bb369e10c1ef08cfbb704";
   }
 
-  // debounce
-  // debounce(fn, delay) {
-  //   let timer;
-  //   return function () {
-  //     setTimeout(timer);
-  //     timer = setTimeout(() => {
-  //       fn();
-  //     }, delay);
-  //   };
-  // }
 
   //fetch multiple users
   fetchData() {
@@ -115,7 +105,6 @@ class Details {
 var details = new Details();
 
 const getUserDetails = () => {
-  // details.debounce(details.fetchData(), 3000);
   details.fetchData()
 };
 
