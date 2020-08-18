@@ -41,7 +41,7 @@ h1 {
   text-align: center;
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 200px));
   grid-gap: 30px;
   padding: 0 25px;
 }
@@ -120,6 +120,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
 }
+
 .userRepo li span{
   font-family: "Sora", sans-serif;
 }
@@ -159,7 +160,7 @@ h1 {
   .gists:hover,
   .following:hover,
   .followers:hover,
-  .userProfile:hover {
+  .userProfile:hover, .generalDataList li img:hover{
     cursor: pointer;
     opacity: 0.5;
   }
