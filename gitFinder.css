@@ -10,7 +10,8 @@
 .searchDiv {
   text-align: center;
 }
-h1 {
+h1,
+h3 {
   font-size: 25px;
   font-weight: 700;
   font-family: "Sora", sans-serif;
@@ -50,7 +51,7 @@ h1 {
   list-style: none;
 }
 .generalDataList li span,
-.name{
+.name {
   margin: 30px 0;
   font-family: "Sora", sans-serif;
   font-size: 15px;
@@ -101,7 +102,7 @@ h1 {
 .company,
 .website,
 .location,
-.member{
+.member {
   text-align: start;
   font-family: "Sora", sans-serif;
   font-size: 15px;
@@ -114,29 +115,29 @@ h1 {
 .userData li {
   list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
 .userRepo li {
+  margin: 35px 0;
+  text-align: center;
+  width: 100%;
   border: 1px solid wheat;
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+.userRepo li span:nth-child(2) {
+  background-color: #bbeeff;
+}
+.userRepo li span:nth-child(3) {
+  background-color: #99ccff;
+}
+.userRepo li span:nth-child(4) {
+  background-color: #77aaff;
+  
+}
+.userRepo li span {
   padding: 20px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1%, 1fr));
-}
-.userRepo li span:nth-child(1){
-  text-align: start;
-}
-.userRepo li span:nth-child(2){
-  background-color: orange;
-}
-.userRepo li span:nth-child(3){
-  background-color: teal;
-}
-.userRepo li span:nth-child(4){
-  background-color: lightblue;
-}
-.userRepo li span{
   font-family: "Sora", sans-serif;
 }
 
@@ -171,11 +172,8 @@ a{
     border-radius: 10px;
   }
   .searchBtn:hover,
-  .repos:hover,
-  .gists:hover,
-  .following:hover,
-  .followers:hover,
-  .userProfile:hover, .generalDataList li img:hover{
+  .userProfile:hover,
+  .generalDataList li img:hover {
     cursor: pointer;
     opacity: 0.5;
   }
@@ -204,8 +202,15 @@ a{
     font-size: 20px;
     margin: 15px 25%;
   }
-  .userRepo{
-    padding: 0 80px;
-    font-size: 20px;
+  /* .userRepo{
+    border: 10px solid black;
+  } */
+
+  .userRepo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 60px;
+    grid-auto-rows: 400px;
   }
 }

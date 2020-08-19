@@ -11,7 +11,6 @@ class Details {
     this.client_secret = "d4dd84715469c159227bb369e10c1ef08cfbb704";
   }
 
-
   //fetch multiple users
   fetchData() {
     var value = document.querySelector(".username");
@@ -98,14 +97,15 @@ class Details {
     ).innerHTML = `Location: ${value.location} `;
     document.querySelector(
       ".member"
-    ).innerHTML = `Member since: ${value.created_at} `;
+    ).innerHTML = `Member since: ${value.created_at} `
+    
   }
 }
 
 var details = new Details();
 
 const getUserDetails = () => {
-  details.fetchData()
+  details.fetchData();
 };
 
 const handleSpecificUserClick = (index) => {
