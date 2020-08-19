@@ -16,6 +16,7 @@ class Details {
     var value = document.querySelector(".username");
     var userValue = value.value;
     generalItemList.innerHTML = "Loading...."
+    userRepo.innerHTML = " "
     fetch(`https://api.github.com/search/users?q=${userValue}`)
       .then((response) => response.json())
       .then((data) => {
