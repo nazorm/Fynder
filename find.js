@@ -1,7 +1,7 @@
-var generalItemList = document.querySelector(".generalDataList");
-var specificdataList = document.querySelector(".specificdataList");
-var userRepo = document.querySelector(".userRepo");
-var profileId = document.querySelector(".username");
+let generalItemList = document.querySelector(".generalDataList");
+let specificdataList = document.querySelector(".specificdataList");
+let userRepo = document.querySelector(".userRepo");
+let profileId = document.querySelector(".username");
 var catalog = document.querySelector(".dataCatalog");
 
 class Details {
@@ -13,8 +13,8 @@ class Details {
 
   //fetch multiple users
   fetchData() {
-    var value = document.querySelector(".username");
-    var userValue = value.value;
+    let value = document.querySelector(".username");
+    let userValue = value.value;
     generalItemList.innerHTML = "Loading...."
     userRepo.innerHTML = " "
     fetch(`https://api.github.com/search/users?q=${userValue}`)
@@ -28,7 +28,7 @@ class Details {
   handleEveryUserDisplay(items) {
     generalItemList.innerHTML = " ";
     for (let i = 0; i < items.length; i++) {
-      var item = `<li>
+      let item = `<li>
         <img src='${items[i].avatar_url}' onclick="handleSpecificUserClick(${i})"/>
         <span>${items[i].login}</span>
         </li>`;
@@ -103,7 +103,7 @@ class Details {
   }
 }
 
-var details = new Details();
+let details = new Details();
 
 const getUserDetails = () => {
   details.fetchData();
