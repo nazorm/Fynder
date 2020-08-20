@@ -2,7 +2,7 @@ let generalItemList = document.querySelector(".generalDataList");
 let specificdataList = document.querySelector(".specificdataList");
 let userRepo = document.querySelector(".userRepo");
 let profileId = document.querySelector(".username");
-var catalog = document.querySelector(".dataCatalog");
+let catalog = document.querySelector(".dataCatalog");
 
 class Details {
   constructor() {
@@ -11,7 +11,7 @@ class Details {
     this.client_secret = "d4dd84715469c159227bb369e10c1ef08cfbb704";
   }
 
-  //fetch multiple users
+  //fetch multiple users query
   fetchData() {
     let value = document.querySelector(".username");
     let userValue = value.value;
